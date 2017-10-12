@@ -38,7 +38,17 @@ namespace WindowsFormsApplication1
         {
             if ( string.IsNullOrWhiteSpace(this.uploadAddress.Text) )
             {
-                MessageBox.Show("请先设置上传地址。");
+                MessageBox.Show("请设置上传地址。");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(this.dataPacketSize.Text))
+            {
+                MessageBox.Show("请设置分包大小。");
+                return;
+            }
+            if ( !IsNumber(this.dataPacketSize.Text) )
+            {
+                MessageBox.Show("分包大小应为数字。");
                 return;
             }
 
@@ -54,7 +64,7 @@ namespace WindowsFormsApplication1
                 v_Input = new FileStream(this.showFile.Text, FileMode.Open);
 
                 int    v_DataNo    = 0;
-                byte[] v_Data      = new byte[1024 * 100];
+                byte[] v_Data      = new byte[(int)(toNumber(this.dataPacketSize.Text.Trim()) * 100)];
                 double v_DataCount = (double)v_File.Length / (double)v_Data.Length;
                 string v_FileName  = DateTime.Now.ToFileTimeUtc().ToString() + v_File.Extension;
 
@@ -131,6 +141,33 @@ namespace WindowsFormsApplication1
             StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding(encoding));
             string retString = reader.ReadToEnd();
             return retString;
+        }
+
+
+        public static bool IsNumber(string oText)
+        {
+            try
+            {
+                double var1 = Convert.ToDouble(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public static double toNumber(string oText)
+        {
+            try
+            {
+                return Convert.ToDouble(oText);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
     }
