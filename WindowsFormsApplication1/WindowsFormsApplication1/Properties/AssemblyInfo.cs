@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Demo-Upload")]
-[assembly: AssemblyDescription("https://github.com/HY-ZhengWei/Demo-Upload-for-C-")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Demo-Upload")]
+[assembly: AssemblyProduct("https://github.com/HY-ZhengWei/Demo-Upload-for-C-")]
 [assembly: AssemblyCopyright("Copyright ©  2017  ZhengWei(HY)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
