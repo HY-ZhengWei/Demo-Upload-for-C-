@@ -33,6 +33,8 @@
             this.upload = new System.Windows.Forms.Button();
             this.showFile = new System.Windows.Forms.TextBox();
             this.uploadProgress = new System.Windows.Forms.ProgressBar();
+            this.uploadAddress = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -41,20 +43,20 @@
             // 
             // selectUploadFile
             // 
-            this.selectUploadFile.Location = new System.Drawing.Point(617, 28);
+            this.selectUploadFile.Location = new System.Drawing.Point(12, 28);
             this.selectUploadFile.Name = "selectUploadFile";
-            this.selectUploadFile.Size = new System.Drawing.Size(100, 23);
+            this.selectUploadFile.Size = new System.Drawing.Size(76, 23);
             this.selectUploadFile.TabIndex = 0;
-            this.selectUploadFile.Text = "选择上传的文件";
+            this.selectUploadFile.Text = "选择文件";
             this.selectUploadFile.UseVisualStyleBackColor = true;
             this.selectUploadFile.Click += new System.EventHandler(this.selectUploadFile_Click);
             // 
             // upload
             // 
             this.upload.Enabled = false;
-            this.upload.Location = new System.Drawing.Point(617, 75);
+            this.upload.Location = new System.Drawing.Point(12, 110);
             this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(100, 23);
+            this.upload.Size = new System.Drawing.Size(76, 23);
             this.upload.TabIndex = 1;
             this.upload.Text = "开始上传";
             this.upload.UseVisualStyleBackColor = true;
@@ -62,24 +64,43 @@
             // 
             // showFile
             // 
-            this.showFile.Location = new System.Drawing.Point(12, 28);
+            this.showFile.Location = new System.Drawing.Point(94, 28);
             this.showFile.Name = "showFile";
             this.showFile.ReadOnly = true;
-            this.showFile.Size = new System.Drawing.Size(599, 21);
+            this.showFile.Size = new System.Drawing.Size(623, 21);
             this.showFile.TabIndex = 2;
             // 
             // uploadProgress
             // 
-            this.uploadProgress.Location = new System.Drawing.Point(12, 75);
+            this.uploadProgress.Location = new System.Drawing.Point(94, 110);
             this.uploadProgress.Name = "uploadProgress";
-            this.uploadProgress.Size = new System.Drawing.Size(599, 23);
+            this.uploadProgress.Size = new System.Drawing.Size(623, 23);
             this.uploadProgress.TabIndex = 3;
+            // 
+            // uploadAddress
+            // 
+            this.uploadAddress.Location = new System.Drawing.Point(94, 69);
+            this.uploadAddress.Name = "uploadAddress";
+            this.uploadAddress.Size = new System.Drawing.Size(623, 21);
+            this.uploadAddress.TabIndex = 4;
+            this.uploadAddress.Text = "http://127.0.0.1:80/xx/hoto";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "上传地址";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 126);
+            this.ClientSize = new System.Drawing.Size(735, 157);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uploadAddress);
             this.Controls.Add(this.uploadProgress);
             this.Controls.Add(this.showFile);
             this.Controls.Add(this.upload);
@@ -101,6 +122,8 @@
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.TextBox showFile;
         private System.Windows.Forms.ProgressBar uploadProgress;
+        private System.Windows.Forms.TextBox uploadAddress;
+        private System.Windows.Forms.Label label1;
     }
 }
 

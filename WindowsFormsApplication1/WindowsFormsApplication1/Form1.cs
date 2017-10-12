@@ -36,6 +36,12 @@ namespace WindowsFormsApplication1
 
         private void upload_Click(object sender, EventArgs e)
         {
+            if ( string.IsNullOrWhiteSpace(this.uploadAddress.Text) )
+            {
+                MessageBox.Show("请先设置上传地址。");
+                return;
+            }
+
             this.selectUploadFile.Enabled = false;
             this.upload.Enabled = false;
             
@@ -74,7 +80,7 @@ namespace WindowsFormsApplication1
                                           + ";" + ByteHelp.bytesToHex(v_Data ,0 , v_DataLen)
                                           + ";" + "new"
                                           + ";" + "用户名称";
-                        sendHttpPost("http://127.0.0.1:80/xx/hoto", v_SendData);
+                        sendHttpPost(this.uploadAddress.Text, v_SendData);
                         this.uploadProgress.Value = v_DataNo;
                     }
                 }
