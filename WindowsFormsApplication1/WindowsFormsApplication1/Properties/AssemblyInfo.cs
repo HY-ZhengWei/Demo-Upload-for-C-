@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("WindowsFormsApplication1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Demo-Upload")]
+[assembly: AssemblyDescription("https://github.com/HY-ZhengWei/Demo-Upload-for-C-")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsApplication1")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("Demo-Upload")]
+[assembly: AssemblyCopyright("Copyright ©  2017  ZhengWei(HY)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
