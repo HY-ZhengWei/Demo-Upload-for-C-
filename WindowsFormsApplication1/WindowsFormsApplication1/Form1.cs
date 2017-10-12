@@ -78,10 +78,13 @@ namespace WindowsFormsApplication1
                         this.uploadProgress.Value = v_DataNo;
                     }
                 }
+
+                MessageBox.Show("上传完成");
             }
             catch (Exception exce)
             {
                 Console.WriteLine("{0} Second exception.", exce.Message);
+                MessageBox.Show("上传出现异常");
             }
             finally
             {
@@ -94,20 +97,25 @@ namespace WindowsFormsApplication1
 
             this.selectUploadFile.Enabled = true;
             this.upload.Enabled = true;
-            MessageBox.Show("上传完成");
         }
 
 
 
         public static string sendHttpPost(string Url, string postDataStr)
         {
+            byte[] postData = Encoding.UTF8.GetBytes(postDataStr);
+
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = postDataStr.Length;
-            StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.ASCII);
-            writer.Write(postDataStr);
-            writer.Flush();
+            request.ContentType = "application/x-www-form-urlencoded;charset=utf8";
+            request.ContentLength = postData.Length;
+            request.Timeout = 30000;
+
+            Stream v_Out = request.GetRequestStream();
+            v_Out.Write(postData ,0 , postData.Length);
+            v_Out.Flush();
+
+
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string encoding = response.ContentEncoding;
             if (encoding == null || encoding.Length < 1)
