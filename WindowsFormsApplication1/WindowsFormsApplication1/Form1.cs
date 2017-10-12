@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
 
         private void selectUploadFile_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
+            openFileDialog1.Filter = "压缩包(*.zip)|*.zip|Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
             openFileDialog1.ValidateNames   = true;
             openFileDialog1.CheckPathExists = true;
             openFileDialog1.CheckFileExists = true;
