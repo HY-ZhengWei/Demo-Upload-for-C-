@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
                 v_Input = new FileStream(this.showFile.Text, FileMode.Open);
 
                 int    v_DataNo    = 0;
-                byte[] v_Data      = new byte[(int)(toNumber(this.dataPacketSize.Text.Trim()) * 100)];
+                byte[] v_Data      = new byte[(int)(toNumber(this.dataPacketSize.Text.Trim()) * 1024)];
                 double v_DataCount = (double)v_File.Length / (double)v_Data.Length;
                 string v_FileName  = DateTime.Now.ToFileTimeUtc().ToString() + v_File.Extension;
 
