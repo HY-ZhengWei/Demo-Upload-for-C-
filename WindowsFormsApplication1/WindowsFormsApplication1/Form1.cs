@@ -84,12 +84,12 @@ namespace WindowsFormsApplication1
                     else
                     {
                         v_DataNo++;
-                        string v_SendData = v_FileName
-                                          + ";" + v_DataCount
-                                          + ";" + v_DataNo
-                                          + ";" + ByteHelp.bytesToHex(v_Data ,0 , v_DataLen)
-                                          + ";" + "new"
-                                          + ";" + "用户名称";
+                        string v_SendData = v_FileName                                         // 文件名称
+                                          + ";" + v_DataCount                                  // 总分包数量
+                                          + ";" + v_DataNo                                     // 本次分包序号。下标从1开始
+                                          + ";" + ByteHelp.bytesToHex(v_Data ,0 , v_DataLen)   // 文件分包的内容
+                                          + ";" + "new"                                        // 接口标记（new、append、cover）
+                                          + ";" + "用户名称";                                  // 用户名称
                         sendHttpPost(this.uploadAddress.Text, v_SendData);
                         this.uploadProgress.Value = v_DataNo;
                     }
