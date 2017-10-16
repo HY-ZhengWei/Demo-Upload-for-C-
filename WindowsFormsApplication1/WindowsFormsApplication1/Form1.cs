@@ -170,5 +170,9 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void uploadAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

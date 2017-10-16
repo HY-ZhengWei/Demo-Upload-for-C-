@@ -86,7 +86,8 @@
             this.uploadAddress.Name = "uploadAddress";
             this.uploadAddress.Size = new System.Drawing.Size(623, 21);
             this.uploadAddress.TabIndex = 4;
-            this.uploadAddress.Text = "http://127.0.0.1:80/xx/hoto";
+            this.uploadAddress.Text = "http://218.21.3.26:5042/xx/hoto";
+            this.uploadAddress.TextChanged += new System.EventHandler(this.uploadAddress_TextChanged);
             // 
             // label1
             // 
